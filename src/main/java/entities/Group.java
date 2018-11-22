@@ -23,13 +23,13 @@ public class Group extends Entity implements Serializable {
     }
 
     public void addGroupStudents(Student student) {
-            this.groupStudents.add(student);
+        student.setStudentsGroup(this);
+        this.groupStudents.add(student);
     }
 
     public ArrayList<Course> getGroupCourses() {
         return groupCourses;
     }
-
 
     @Override
     public String toString() {
