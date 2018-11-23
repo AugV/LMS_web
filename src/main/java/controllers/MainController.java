@@ -1,11 +1,15 @@
 package controllers;
 
+import entities.Course;
+import entities.Student;
 import entities.University;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 import util.UniversityDataFiller;
+
+import java.util.List;
 
 @Controller
 public class MainController {
@@ -22,9 +26,10 @@ public class MainController {
     }
 
     @RequestMapping(value="/courses")
-    public String coursePage(@RequestParam("studentIdForm") String id, Model m) {
-        String ID = id;
-        m.addAttribute("studentId", ID);
+    public String coursePage(@RequestParam("studentIdForm") int studentId, Model model) {
+        Student loggedStudent = university.getStudentById(studentId);
+        List<Course> loggedStudentCourses = loggedStudent.getStudentsGroup().getGroupCourses();
+        model.addAttribute("courseList", loggedStudentCourses);
         return "courses";
     }
 }

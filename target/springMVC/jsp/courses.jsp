@@ -1,10 +1,4 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Augustinas
-  Date: 2018-11-21
-  Time: 16:55
-  To change this template use File | Settings | File Templates.
---%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,6 +6,18 @@
 </head>
 <body>
 <h2>COURSES</h2>
-<h3>${studentId}</h3>
+<h2>Course list</h2>
+<table style="border: 1px solid;">
+    <tr>
+        <th style="border-left: 2px solid #cdd0d4;border-bottom: 2px solid #cdd0d4;">Id</th>
+        <th style="border-left: 2px solid #cdd0d4;border-bottom: 2px solid #cdd0d4;">Name</th>
+    </tr>
+    <c:forEach var="course" items="${courseList}">
+        <tr>
+            <td style="border-left: 2px solid #cdd0d4;border-bottom: 2px solid #cdd0d4;">${course.id}</td>
+            <td style="border-left: 2px solid #cdd0d4;border-bottom: 2px solid #cdd0d4;">${course.name}</td>
+        </tr>
+    </c:forEach>
+</table>
 </body>
 </html>

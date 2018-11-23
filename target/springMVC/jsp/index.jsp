@@ -19,7 +19,6 @@
 </form>
 
 <button>Login</button>
-
 <h6>*psw is same as ID</h6><br>
 <h2>Student list</h2>
 <table style="border: 1px solid;">
