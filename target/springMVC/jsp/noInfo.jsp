@@ -11,6 +11,6 @@
     <title>No Information</title>
 </head>
 <body>
-<h1>NO INFORMATION FOR YOU MY FIREND</h1>
+<h1>NO INFORMATION FOR YOU MY FRIEND</h1>
 </body>
 </html>

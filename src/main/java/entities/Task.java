@@ -19,6 +19,22 @@ public class Task extends Entity implements Serializable {
         this.points = points;
     }
 
+    public String getTaskCondition() {
+        return taskCondition;
+    }
+
+    public String getDeadline() {
+        return deadline;
+    }
+
+    public String getPoints() {
+        return points;
+    }
+
+    public boolean isAllowSubmitCompletedTask() {
+        return allowSubmitCompletedTask;
+    }
+
     public CompletedTask getCompletedTaskById(int id) {
         CompletedTask completedTaskMatch = null;
         for (CompletedTask completedTask : taskCompletedTasks) {

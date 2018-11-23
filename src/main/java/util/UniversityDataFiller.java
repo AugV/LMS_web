@@ -33,9 +33,11 @@ public class UniversityDataFiller {
 
 
         university.getCourseByID(1).getCourseTaskByID(1).addTaskCompletedTask(new entities.CompletedTask(
-                1, "teisingas atsakymas, kolegos"));
+                1, "teisingas atsakymas, kolegos", university.getGroupByID(2).getGroupStudents().get(0)));
         university.getCourseByID(2).getCourseTaskByID(2).addTaskCompletedTask(new entities.CompletedTask(
-                2, "neteisingas atsakymas, biciuli"));
+                2, "neteisingas atsakymas, biciuli",university.getGroupByID(1).getGroupStudents().get(0)));
+        university.getCourseByID(1).getCourseTaskByID(1).getTaskCompletedTasks().get(0).setGrade("10");
+        university.getCourseByID(2).getCourseTaskByID(2).getTaskCompletedTasks().get(0).setGrade("2");
 
     }
 

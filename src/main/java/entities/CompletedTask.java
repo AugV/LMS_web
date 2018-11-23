@@ -9,15 +9,30 @@ public class CompletedTask extends Entity implements Serializable  {
     private static DateFormat dateFormat= new SimpleDateFormat("yyyy/mm/dd");
     private static Calendar calendar = Calendar.getInstance();
 
-    private String answer,
-    grade,
-    submissionDate,
-    gradeDate;
+    private Student owner;
 
-    public CompletedTask(int id, String answer) {
+    public Student getOwner() {
+        return owner;
+    }
+
+    public String getSubmissionDate() {
+        return submissionDate;
+    }
+
+    public String getGradeDate() {
+        return gradeDate;
+    }
+
+    private String answer;
+    private String grade;
+    private String submissionDate;
+    private String gradeDate;
+
+    public CompletedTask(int id, String answer, Student owner) {
         super(id);
         this.answer = answer;
         this.submissionDate = dateFormat.format(calendar.getTime());
+        this.owner = owner;
     }
 
     public String getAnswer() {
