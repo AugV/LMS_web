@@ -10,6 +10,7 @@ import org.springframework.web.servlet.ModelAndView;
 import util.UniversityDataFiller;
 
 import java.util.List;
+import java.util.NoSuchElementException;
 
 @Controller
 public class MainController {
@@ -27,9 +28,31 @@ public class MainController {
 
     @RequestMapping(value="/courses")
     public String coursePage(@RequestParam("studentIdForm") int studentId, Model model) {
-        Student loggedStudent = university.getStudentById(studentId);
-        List<Course> loggedStudentCourses = loggedStudent.getStudentsGroup().getGroupCourses();
-        model.addAttribute("courseList", loggedStudentCourses);
-        return "courses";
+        Student loggedStudent= getStudent(studentId);
+        if(exists(loggedStudent)){
+            List<Course> loggedStudentCourses = loggedStudent.getStudentsGroup().getGroupCourses();
+            model.addAttribute("courseList", loggedStudentCourses);
+            return "courses";}
+        else {
+            return callNoInfopage();
+        }
+    }
+
+    private boolean exists(Object objectToCheck) {
+        return objectToCheck != null;
+    }
+
+    private Student getStudent(int studentId) {
+        Student student=null;
+        try{
+            student = university.getStudentById(studentId);
+        } catch(NoSuchElementException e){
+            System.out.println("EXCEPTION: " + e);
+        }
+        return student;
+    }
+
+    public String callNoInfopage(){
+        return "noInfo";
     }
 }

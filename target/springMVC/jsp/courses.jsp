@@ -2,10 +2,10 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>KURSAI</title>
+    <title>Courses</title>
 </head>
 <body>
-<h2>COURSES</h2>
+<h2>Your Courses</h2>
 <h2>Course list</h2>
 <table style="border: 1px solid;">
     <tr>
