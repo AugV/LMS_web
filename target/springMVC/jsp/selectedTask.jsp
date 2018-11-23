@@ -5,10 +5,10 @@
     <title>Selected Task</title>
 </head>
 <body>
-<h2>${taskName}</h2>
-<h3>${taskCondition}</h3>
-<h3>${taskDeadline}</h3>
-<h3>${taskPoints}</h3>
+<h2>Task: ${taskName}</h2><br>
+<h3>Condition: ${taskCondition}</h3><br>
+<h3>DeadLine: ${taskDeadline}</h3><br>
+<h3>Points: ${taskPoints}</h3><br>
 
 <h3>Post answer</h3>
 <form action="/completedTasks" method="POST">

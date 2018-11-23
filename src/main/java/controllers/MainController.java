@@ -28,10 +28,11 @@ public class MainController {
     }
 
     @RequestMapping(value = "/courses")
-    public String coursePage(@RequestParam("studentIdForm") int studentId, Model model) {
+    public String coursePage(@RequestParam("studentId") int studentId, @RequestParam("studentPsw") int studentPsw, Model model) {
         loggedStudent = getStudent(studentId);
-        if (exists(loggedStudent)) {
+        if (exists(loggedStudent) && areEqual(studentId,studentPsw)) {
             List<Course> loggedStudentCourses = loggedStudent.getStudentsGroup().getGroupCourses();
+            model.addAttribute("loggedStudent", loggedStudent);
             model.addAttribute("courseList", loggedStudentCourses);
             return "courses";
         } else {
@@ -44,6 +45,7 @@ public class MainController {
         selectedCourse = getCourse(courseId);
         if (exists(selectedCourse)) {
             List<Task> selectedCourseTasks = selectedCourse.getCourseTasks();
+            model.addAttribute("selectedCourse", selectedCourse);
             model.addAttribute("taskList", selectedCourseTasks);
             return "tasks";
         } else {
@@ -84,6 +86,9 @@ public class MainController {
         return task;
     }
 
+    private boolean areEqual(int studentId, int studentPsw) {
+        return studentId==studentPsw;
+    }
 
     private boolean exists(Object objectToCheck) {
         return objectToCheck != null;

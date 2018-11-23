@@ -5,7 +5,7 @@
     <title>Tasks</title>
 </head>
 <body>
-<h2>Your Tasks</h2>
+<h2>'${selectedCourse.name}' tasks</h2>
 <h3>Enter task number</h3>
 <form action="/selectedTask" method="POST">
     <input type="text" name="taskId"><br>

@@ -5,20 +5,16 @@
     <title>Login</title>
 </head>
 <body>
-<h1>LOGIN</h1>
+<h2>Login</h2>
 
 <form action ="/courses" method="POST">
-    Student id:
-    <input type="text" name="studentIdForm">
-    <input type="submit" value="Submit">
+    Student id:<br>
+    <input type="text" name="studentId"><br>
+    Password: <br>
+    <input type="password" name="studentPsw"><br>
+    <input type="submit" value="Login">
 </form>
 
-<form>
-    Password:
-    <input type="password" name="studentPswForm">
-</form>
-
-<button>Login</button>
 <h6>*psw is same as ID</h6><br>
 <h2>Student list</h2>
 <table style="border: 1px solid;">

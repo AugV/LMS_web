@@ -19,7 +19,7 @@
     </tr>
     <c:forEach var="completedTask" items="${completedTaskList}">
         <tr>
-            <td style="border-left: 2px solid #cdd0d4;border-bottom: 2px solid #cdd0d4;">${completedTask.owner}</td>
+            <td style="border-left: 2px solid #cdd0d4;border-bottom: 2px solid #cdd0d4;">${completedTask.owner.surname}</td>
             <td style="border-left: 2px solid #cdd0d4;border-bottom: 2px solid #cdd0d4;">${completedTask.answer}</td>
             <td style="border-left: 2px solid #cdd0d4;border-bottom: 2px solid #cdd0d4;">${completedTask.submissionDate}</td>
             <td style="border-left: 2px solid #cdd0d4;border-bottom: 2px solid #cdd0d4;">${completedTask.grade}</td>

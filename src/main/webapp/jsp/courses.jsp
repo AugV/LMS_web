@@ -5,7 +5,7 @@
     <title>Courses</title>
 </head>
 <body>
-<h2>Your Courses</h2>
+<h2>Welcome, ${loggedStudent.name} ${loggedStudent.surname}</h2>
 <h3>Enter course number</h3>
 <form action="/tasks" method="POST">
     <input type="text" name="courseId"><br>
